@@ -53,6 +53,10 @@ public class FileManager{
                 cfg1.addDefault("Message.tell.usage", "/msg <name> <nachricht>");
                 cfg1.addDefault("Message.Chat.deaktivieren", "Chat wurde deaktiviert");
                 cfg1.addDefault("Message.Chat.aktivieren", "Chat wurde aktiviert");
+                cfg1.addDefault("Message.changeGameMode.Spectator","Du hast deinen Spielmodus in §cSpectator §egeändert.");
+                cfg1.addDefault("Message.changeGameMode.Adventure","Du hast deinen Spielmodus in §cAdventure §egeändert.");
+                cfg1.addDefault("Message.changeGameMode.Survival","Du hast deinen Spielmodus in §cSurvival §egeändert.");
+                cfg1.addDefault("Message.changeGameMode.Creativ","Du hast deinen Spielmodus in §cKreativ §egeändert.");
                 cfg1.options().copyDefaults(true);
                 cfg1.save(messageDE);
             } catch (IOException e1) {
