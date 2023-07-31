@@ -45,6 +45,10 @@ public class API extends JavaPlugin {
         getCommand("farben").setExecutor(new CMD_color());
         getCommand("cc").setExecutor(new CMD_Chatclear());
         getCommand("chatclear").setExecutor(new CMD_Chatclear());
+        getCommand("spectator").setExecutor(new CMD_Spectator());
+        getCommand("kreativ").setExecutor(new CMD_Creativ());
+        getCommand("creativ").setExecutor(new CMD_Creativ());
+        getCommand("c").setExecutor(new CMD_Creativ());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }
