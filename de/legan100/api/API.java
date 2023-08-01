@@ -49,6 +49,7 @@ public class API extends JavaPlugin {
         getCommand("kreativ").setExecutor(new CMD_Creativ());
         getCommand("creativ").setExecutor(new CMD_Creativ());
         getCommand("c").setExecutor(new CMD_Creativ());
+        getCommand("adventure").setExecutor(new CMD_Adventure());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }
