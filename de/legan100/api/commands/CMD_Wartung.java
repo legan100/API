@@ -15,7 +15,7 @@ public class CMD_Wartung implements CommandExecutor {
         File messageDE = new File("plugins//API//message_de_DE.yml");
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
-            if (p.hasPermission("System.Admin")) {
+            if (p.hasPermission("System.Admin")|| p.hasPermission("System.Dev")) {
                 if (args.length >= 1) {
                     p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.unknownCMD"));
                 } else if (isWartung) {
