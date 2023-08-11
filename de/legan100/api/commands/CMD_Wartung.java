@@ -9,7 +9,7 @@ import java.io.File;
 
 public class CMD_Wartung implements CommandExecutor {
 
-    public static boolean isWartung = false;
+    public static boolean isWartung = true;
 
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         File messageDE = new File("plugins//API//message_de_DE.yml");
