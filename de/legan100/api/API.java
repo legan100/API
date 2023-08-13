@@ -17,7 +17,7 @@ public class API extends JavaPlugin {
     }
 
     public void onDisable() {
-        //MySQL.disconnect();
+        MySQL.disconnect();
     }
 
     public void register() {
@@ -50,6 +50,7 @@ public class API extends JavaPlugin {
         getCommand("payall").setExecutor(new CMD_PayAll());
         getCommand("pay").setExecutor(new CMD_Pay());
         getCommand("removemoney").setExecutor(new CMD_RemoveMoney());
+        getCommand("uuid").setExecutor(new CMD_uuid());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }
