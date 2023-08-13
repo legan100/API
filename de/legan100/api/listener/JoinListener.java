@@ -20,8 +20,9 @@ public class JoinListener implements Listener {
         if (CMD_Wartung.isWartung == true) {
             if (p.hasPermission("System.Team")) {
                 p.sendMessage("Der Wartungsmodus ist aktiviert.");
-            } else {
-                p.kickPlayer("\n\n§cZurzeit befinden wir uns im Wartungsmodus.\n\n§aAllerdings freuen wir uns, wenn wir dich auf unserem TeamSpeak LegendenArmy.de begrüßen dürfen.");
+            } else if(p.hasPermission("System.Join")){}
+              else {
+                  p.kickPlayer("\n\n§cZurzeit befinden wir uns im Wartungsmodus.\n\n§aAllerdings freuen wir uns, wenn wir dich auf unserem TeamSpeak LegendenArmy.de begrüßen dürfen.");
             }
         } else if (p.hasPermission("System.Team")) {
             p.sendMessage("Der Wartungsmodus ist deaktiviert");
