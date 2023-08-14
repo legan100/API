@@ -10,13 +10,23 @@ import java.io.File;
 
 public class CMD_uuid implements CommandExecutor {
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] strings) {
+    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+        File messageDE = new File("plugins//API//message_de_DE.yml");
+        YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if(sender instanceof Player p){
-            p.sendMessage("§eDein Name: " + p.getDisplayName());
-            p.sendMessage("§eDeine UUID: " + p.getUniqueId());
+            Player target = null;
+            if(args[0].equals(target.getDisplayName())){
+                if(sender.hasPermission("System.Admin")){
+                    p.sendMessage("Name: " + target.getDisplayName());
+                    p.sendMessage(target.getDisplayName()+"'s UUID: " + target.getUniqueId());
+                }else {
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
+                }
+            } else if(args == null){
+                p.sendMessage("§eDein Name: " + p.getDisplayName());
+                p.sendMessage("§eDeine UUID: " + p.getUniqueId());
+            }
         } else {
-            File messageDE = new File("plugins//API//message_de_DE.yml");
-            YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
             sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
         }
 
