@@ -9,13 +9,13 @@ import java.io.File;
 
 public class CMD_Wartung implements CommandExecutor {
 
-    public static boolean isWartung = false;
+    public static boolean isWartung = true;
 
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         File messageDE = new File("plugins//API//message_de_DE.yml");
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
-            if (p.hasPermission("System.Admin")) {
+            if (p.hasPermission("System.Admin")|| p.hasPermission("System.Dev")) {
                 if (args.length >= 1) {
                     p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.unknownCMD"));
                 } else if (isWartung) {

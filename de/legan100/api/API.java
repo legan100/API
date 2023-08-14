@@ -5,6 +5,7 @@ import de.legan100.api.listener.ChatListener;
 import de.legan100.api.listener.JoinListener;
 import de.legan100.api.utils.Broadcaster;
 import de.legan100.api.utils.FileManager;
+import de.legan100.api.utils.MySQL;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class API extends JavaPlugin {
@@ -16,13 +17,12 @@ public class API extends JavaPlugin {
     }
 
     public void onDisable() {
-        //MySQL.disconnect();
+        MySQL.disconnect();
     }
 
     public void register() {
-        /*MySQL.connect();
+        MySQL.connect();
         MySQL.createTable();
-        MoneyAPI api = new MoneyAPI();*/
         getCommand("rang").setExecutor(new CMD_Rang());
         getCommand("wartung").setExecutor(new CMD_Wartung());
         getCommand("chat").setExecutor(new CMD_Chat());
@@ -50,6 +50,12 @@ public class API extends JavaPlugin {
         getCommand("creativ").setExecutor(new CMD_Creativ());
         getCommand("c").setExecutor(new CMD_Creativ());
         getCommand("adventure").setExecutor(new CMD_Adventure());
+        getCommand("money").setExecutor(new CMD_Money());
+        getCommand("addmoney").setExecutor(new CMD_addMoney());
+        getCommand("payall").setExecutor(new CMD_PayAll());
+        getCommand("pay").setExecutor(new CMD_Pay());
+        getCommand("removemoney").setExecutor(new CMD_RemoveMoney());
+        getCommand("uuid").setExecutor(new CMD_uuid());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }

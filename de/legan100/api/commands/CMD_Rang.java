@@ -33,7 +33,7 @@ public class CMD_Rang implements CommandExecutor {
                 p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Rang.Designer"));
             } else if (p.hasPermission("System.Media")) {
                 p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Rang.Media"));
-            } else if (p.hasPermission("System.Clan")) {
+            } else if (p.hasPermission("System.Mitarbeiter")) {
                 p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Rang.Clan"));
             } else if (p.hasPermission("System.Premium")) {
                 p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Rang.Premium"));
@@ -41,7 +41,7 @@ public class CMD_Rang implements CommandExecutor {
                 p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Rang.Spieler"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + "Du hast den Rang: §9 Konsole");
+            sender.sendMessage(cfg1.getString("Message.prefix") + "Du hast den Rang: §9Konsole");
         }
         return false;
     }
