@@ -45,6 +45,11 @@ public class API extends JavaPlugin {
         getCommand("farben").setExecutor(new CMD_color());
         getCommand("cc").setExecutor(new CMD_Chatclear());
         getCommand("chatclear").setExecutor(new CMD_Chatclear());
+        getCommand("spectator").setExecutor(new CMD_Spectator());
+        getCommand("kreativ").setExecutor(new CMD_Creativ());
+        getCommand("creativ").setExecutor(new CMD_Creativ());
+        getCommand("c").setExecutor(new CMD_Creativ());
+        getCommand("adventure").setExecutor(new CMD_Adventure());
         getCommand("money").setExecutor(new CMD_Money());
         getCommand("addmoney").setExecutor(new CMD_addMoney());
         getCommand("payall").setExecutor(new CMD_PayAll());
