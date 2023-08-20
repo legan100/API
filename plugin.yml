@@ -22,13 +22,19 @@ commands:
   gruss:
   msg:
   tell:
+  money:
+  addmoney:
   DM:
   port:
+  removeMoney:
+  pay:
   whisper:
   cc:
   ChatClear:
+  payall:
   spectator:
   c:
   creativ:
   kreativ:
   adventure:
+  uuid:
