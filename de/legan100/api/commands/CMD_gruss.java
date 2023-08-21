@@ -18,19 +18,19 @@ public class CMD_gruss implements CommandExecutor {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
                     if (target.getName().equals(p.getName())) {
-                        p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Du darfst dich nicht selber grüßen"));
+                        p.sendMessage(cfg1.getString("message.prefix") + "Du darfst dich nicht selber grüßen");
                     } else {
-                        target.sendMessage(cfg1.getString("Message.prefix") + "Du wurdest von §c" + p.getDisplayName() + " §egegrüßt.");
-                        p.sendMessage(cfg1.getString("Message.prefix") + "Du hast den Spieler §c" + target.getDisplayName() + " §egegrüßt.");
+                        target.sendMessage(cfg1.getString("message.prefix") + "Du wurdest von §c" + p.getDisplayName() + " §egegrüßt.");
+                        p.sendMessage(cfg1.getString("essage.prefix") + "Du hast den Spieler §c" + target.getDisplayName() + " §egegrüßt.");
                     }
                 } else {
-                    p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.offlinePlayer"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.offlinePlayer"));
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.greetingsusage"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.greeting.usage"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.prefix"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.prefix"));
         }
         return false;
     }

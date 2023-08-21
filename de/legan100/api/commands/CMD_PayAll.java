@@ -27,27 +27,27 @@ public class CMD_PayAll implements CommandExecutor {
                                 for (Player onlineplayer : Bukkit.getOnlinePlayers()) {
                                     if (!onlineplayer.getDisplayName().equals(p.getDisplayName())) {
                                         api.addMoney(onlineplayer.getUniqueId(), amount);
-                                        onlineplayer.sendMessage("Du hast vom Spieler " + p.getDisplayName() + " " + amount + " Münzen erhalten");
+                                        onlineplayer.sendMessage(cfg1.getString("message.prefix") + "Du hast vom Spieler " + p.getDisplayName() + " " + amount + " Münzen erhalten");
                                         continue;
                                     }
-                                    p.sendMessage("Du hast insgesamt " + summe + " Münzen ausgegeben.");
+                                    p.sendMessage(cfg1.getString("message.prefix") +"Du hast insgesamt " + summe + " Münzen ausgegeben.");
                                     api.removeMoney(p.getUniqueId(), summe);
                                 }
                             } else {
-                                p.sendMessage(cfg1.getString("Message.prefis") + "Du hast nicht genug Geld.");
+                                p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.pay.notEnoughMoney"));
                             }
                         }
                     } else {
-                        p.sendMessage(cfg1.getString("Message.prefis") + "Bitte geb eine Zahl ein");
+                        p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.payall.onlyNumbers"));
                     }
                 } else {
-                    p.sendMessage(cfg1.getString("Message.prefis") + "Nur auf RPBuild erlaubt.");
+                    p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.payall.onlyOnRPBuild"));
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.prefis") + cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefis") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

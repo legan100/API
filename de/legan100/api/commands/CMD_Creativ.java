@@ -17,9 +17,12 @@ public class CMD_Creativ  implements CommandExecutor {
         if(sender instanceof Player p){
             if(p.hasPermission("System.Admin")){
                 p.setGameMode(GameMode.CREATIVE);
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.changeGameMode.Kreativ"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.changeGameMode.creativ"));
+            } else {
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
-        }
-        return false;
+        } else {
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
+        }        return false;
     }
 }

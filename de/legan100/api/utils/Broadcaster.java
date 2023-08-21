@@ -37,7 +37,7 @@ public class Broadcaster {
     }
 
     private String pickMessage() {
-        List<String> messages = this.config.getStringList("BroadcastMessages");
+        List<String> messages = config.getStringList("BroadcastMessages");
         int random = (new Random()).nextInt(messages.size());
         return messages.get(random);
     }

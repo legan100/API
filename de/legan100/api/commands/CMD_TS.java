@@ -13,9 +13,9 @@ public class CMD_TS implements CommandExecutor {
         File messageDE = new File("plugins//API//message_de_DE.yml");
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
-            p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.TS"));
+            p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.ts.ts"));
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

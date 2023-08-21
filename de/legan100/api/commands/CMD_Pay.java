@@ -19,33 +19,33 @@ public class CMD_Pay implements CommandExecutor {
                 MoneyAPI api = new MoneyAPI();
                 int check = api.getMoney(p.getUniqueId().toString());
                 int amount = Integer.valueOf(args[1]);
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Money.usage"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.pay.usage"));
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
                     if (check >= -1) {
                         if (amount >= 1) {
                             if (amount <= api.getMoney(p.getUniqueId().toString())) {
                                 api.removeMoney(p.getUniqueId(), amount);
-                                p.sendMessage(cfg1.getString("Message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gepayed.");
+                                p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gepayed.");
                                 api.addMoney(target.getUniqueId(), amount);
-                                target.sendMessage(cfg1.getString("Message.prefix") + "Du hast von " + p.getDisplayName() + " " + amount + " Münzen bekommen.");
+                                target.sendMessage(cfg1.getString("message.prefix") + "Du hast von " + p.getDisplayName() + " " + amount + " Münzen bekommen.");
                             } else {
-                                p.sendMessage(cfg1.getString("Message.Money.notEnough"));
+                                p.sendMessage(cfg1.getString("message.prefix") +cfg1.getString("message.pay.notEnoughMoney"));
                             }
                         } else {
-                            p.sendMessage(cfg1.getString("Message.Money.MimiumOne"));
+                            p.sendMessage(cfg1.getString("message.prefix") +cfg1.getString("message.pay.minOne"));
                         }
                     } else {
-                        Bukkit.broadcastMessage(cfg1.getString("Message.prefix") + "Der Spieler " + p.getDisplayName() + " hat versucht mit Geld zu bezahlen. Bitte melde dies einem Teamler");
+                        Bukkit.broadcastMessage(cfg1.getString("message.prefix") + "Der Spieler " + p.getDisplayName() + " hat versucht mit Geld zu bezahlen. Bitte melde dies einem Teamler");
                     }
                 } else {
-                    p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.offlinePlayer"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.offlinePlayer"));
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Money.usage"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.pay.usage"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") +cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

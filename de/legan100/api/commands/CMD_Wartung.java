@@ -17,19 +17,19 @@ public class CMD_Wartung implements CommandExecutor {
         if (sender instanceof Player p) {
             if (p.hasPermission("System.Admin")|| p.hasPermission("System.Dev")) {
                 if (args.length >= 1) {
-                    p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.unknownCMD"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.unknownCMD"));
                 } else if (isWartung) {
-                    p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Wartung.disable"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.wartung.disable"));
                     isWartung = false;
                 } else {
-                    p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Wartung.enable"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.wartung.enable"));
                     isWartung = true;
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

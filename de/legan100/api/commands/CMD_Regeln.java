@@ -13,9 +13,9 @@ public class CMD_Regeln implements CommandExecutor {
         File messageDE = new File("plugins//API//message_de_DE.yml");
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
-            p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Regeln"));
+            p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.regeln.regeln"));
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

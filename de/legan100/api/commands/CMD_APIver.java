@@ -14,10 +14,12 @@ public class CMD_APIver implements CommandExecutor {
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
             if (p.hasPermission("System.Admin") || p.hasPermission("System.Dev") || p.hasPermission("System.Content"))
-                sender.sendMessage(cfg1.getString("Message.prefix") + "Das Plugin ist in der Version 1.0");
-            } else {
-                sender.sendMessage(cfg1.getString("Message.prefix") + "Das Plugin ist in der Version 1.0");
-            }
+                sender.sendMessage(cfg1.getString("message.prefix") + "Das Plugin ist in der Version 1.0");
+            else
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
+        } else {
+            sender.sendMessage(cfg1.getString("message.prefix") + "Das Plugin ist in der Version 1.0");
+        }
         return true;
     }
 }
