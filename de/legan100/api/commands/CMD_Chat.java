@@ -19,16 +19,16 @@ public class CMD_Chat implements CommandExecutor{
             if (p.hasPermission("System.Admin")|| p.hasPermission("System.Dev")|| p.hasPermission("System.SrMod")) {
                 if (onChatEnable) {
                     onChatEnable = false;
-                    Bukkit.broadcastMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.Chat.deaktivieren"));
+                    Bukkit.broadcastMessage(cfg1.getString("message.prefix") + cfg1.getString("message.chat.deaktivieren"));
                 } else {
                     onChatEnable = true;
-                    Bukkit.broadcastMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.Chat.aktivieren"));
+                    Bukkit.broadcastMessage(cfg1.getString("message.prefix") + cfg1.getString("message.chat.aktivieren"));
                 }
             } else {
-                p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

@@ -27,7 +27,7 @@ public class CMD_uuid implements CommandExecutor {
                 p.sendMessage("§eDeine UUID: " + p.getUniqueId());
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
 
         return false;
