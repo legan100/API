@@ -19,15 +19,19 @@ public class CMD_Money implements CommandExecutor {
             MoneyAPI api = new MoneyAPI();
             if (args.length == 0) {
                 api.getMoney(p.getUniqueId().toString());
-                p.sendMessage(this.cfg1.getString("Message.prefix") + "Du besitzt momentan " + api.getMoney(p.getUniqueId().toString()) + " Münzen.");
+                p.sendMessage(cfg1.getString("message.prefix") + "Du besitzt momentan " + api.getMoney(p.getUniqueId().toString()) + " Münzen.");
             } else {
                 Player target = Bukkit.getPlayer(args[0]);
-                if (target != null) {
+                if(target.getDisplayName() != null){
+
+                }
+
+                /*if (target != null) {
                     api.getMoney(target.getUniqueId().toString());
                     p.sendMessage(this.cfg1.getString("Message.prefix") + "Der Spieler " + target.getDisplayName() + " besitzt mmomentan " + api.getMoney(target.getUniqueId().toString()) + "Münzen.");
                 } else {
                     p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.offlinePlayer"));
-                }
+                }*/
             }
         }
         return false;

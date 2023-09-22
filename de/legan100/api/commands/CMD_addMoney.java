@@ -19,22 +19,19 @@ public class CMD_addMoney implements CommandExecutor {
             MoneyAPI api = new MoneyAPI();
             if (p.hasPermission("System.Admin") || p.hasPermission("System.Dev")) {
                 if (args.length == 1 || args.length == 0)
-                    p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.Money.addMoneyUsage"));
-                if (args.length == 1) {
-                    int amount = Integer.parseInt(args[1]);
-                    api.addMoney(p.getUniqueId(), amount);
-                } else {
+                    p.sendMessage(cfg1.getString("message.prefix") + this.cfg1.getString("message.addmoney.usage"));
+                else {
                     Player target = Bukkit.getPlayer(args[0]);
                     if (target != null) {
                         int amount = Integer.parseInt(args[1]);
-                        p.sendMessage(this.cfg1.getString("Message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gegeben.");
+                        p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gegeben.");
                         api.addMoney(target.getUniqueId(), amount);
                     } else {
-                        p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.offlinePlayer"));
+                        p.sendMessage(this.cfg1.getString("message.prefix") + this.cfg1.getString("message.offlinePlayer"));
                     }
                 }
             } else {
-                p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         }
         return false;

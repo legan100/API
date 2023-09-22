@@ -26,20 +26,20 @@ public class CMD_RemoveMoney implements CommandExecutor {
                     if (target != null) {
                         int amount = Integer.valueOf(args[1]);
                         if (amount <= api.getMoney(p.getUniqueId().toString())) {
-                            p.sendMessage(cfg1.getString("Message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen genommen.");
+                            p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen genommen.");
                             api.removeMoney(target.getUniqueId(), amount);
                         } else {
-                            p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.Money.Minus"));
+                            p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.removemoney.minus"));
                         }
                     } else {
-                        p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.noPerms"));
+                        p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
                     }
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.prefix") + cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

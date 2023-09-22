@@ -18,7 +18,7 @@ public class ChatListener implements Listener {
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (!CMD_Chat.onChatEnable)  {
             e.setCancelled(true);
-            p.sendMessage(cfg1.getString("Message.prefix") + "Der Chat wurde deaktiviert.");
+            p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.chat.deaktiviert"));
         }
     }
 }

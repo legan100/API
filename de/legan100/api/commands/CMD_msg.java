@@ -21,7 +21,7 @@ public class CMD_msg implements CommandExecutor {
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null) {
                     if (p.getDisplayName().equals(target.getName())) {
-                        p.sendMessage(cfg1.getString("Message.tell.myself"));
+                        p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.msg.notTalkToMyself"));
                     } else {
                         for (int i = 1; i < args.length; i++)
                             this.message += args[i] + " ";
@@ -30,13 +30,13 @@ public class CMD_msg implements CommandExecutor {
                         this.message = "";
                     }
                 } else {
-                    p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.offlinePlayer"));
+                    p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.offlinePlayer"));
                 }
             } else {
-                p.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.tell.usage"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.tell.usage"));
             }
         } else {
-            sender.sendMessage(this.cfg1.getString("Message.prefix") + this.cfg1.getString("Message.tell.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }

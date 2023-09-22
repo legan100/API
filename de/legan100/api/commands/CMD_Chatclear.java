@@ -20,20 +20,20 @@ public class CMD_Chatclear implements CommandExecutor {
                         for (int i = 0; i < 150; i++) {
                             players.sendMessage(" ");
                         }
-                        players.sendMessage("§c§lSystem » §7Der Chat wurde von " + sender.getName() + " geleert");
+                        players.sendMessage("§c§lSystem » §7Der Chat wurde von " + p.getName() + " geleert");
                         continue;
                     }
                     players.sendMessage("");
                     players.sendMessage("");
-                    players.sendMessage("§c§lSystem » §7Der Chat wurde von " + sender.getName() + " geleert");
+                    players.sendMessage("§c§lSystem » §7Der Chat wurde von " + p.getName() + " geleert");
                     players.sendMessage("");
                     players.sendMessage("");
                 }
             } else {
-                p.sendMessage(cfg1.getString("Message.noPerms"));
+                p.sendMessage(cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(cfg1.getString("Message.onlyPlayerAllowed"));
+            sender.sendMessage(cfg1.getString("message.onlyPlayerAllowed"));
         }
         return false;
     }
