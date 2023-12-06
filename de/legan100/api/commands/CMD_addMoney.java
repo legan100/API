@@ -26,6 +26,7 @@ public class CMD_addMoney implements CommandExecutor {
                         int amount = Integer.parseInt(args[1]);
                         p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gegeben.");
                         api.addMoney(target.getUniqueId(), amount);
+                        target.sendMessage(cfg1.getString("message.prefix") + "Der Spieler " + p.getDisplayName() + " hat dir " + amount + " Münzen gegeben.");
                     } else {
                         p.sendMessage(this.cfg1.getString("message.prefix") + this.cfg1.getString("message.offlinePlayer"));
                     }
