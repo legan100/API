@@ -14,14 +14,13 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         MoneyAPI api = new MoneyAPI();
-        if (!p.hasPlayedBefore() && p != null && Bukkit.getPort() == 1024) {
+        if (!p.hasPlayedBefore() && Bukkit.getPort() == 1024) {
             api.addMoney(p.getUniqueId(), 1001);
         }
-        if (CMD_Wartung.isWartung == true) {
+        if (CMD_Wartung.isWartung) {
             if (p.hasPermission("System.Team")) {
                 p.sendMessage("Der Wartungsmodus ist aktiviert.");
-            } else if(p.hasPermission("System.Join")){}
-              else {
+            } else if(!p.isWhitelisted()) {
                   p.kickPlayer("\n\n§cZurzeit befinden wir uns im Wartungsmodus.\n\n§aAllerdings freuen wir uns, wenn wir dich auf unserem TeamSpeak LegendenArmy.de begrüßen dürfen.");
             }
         } else if (p.hasPermission("System.Team")) {
