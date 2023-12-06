@@ -21,7 +21,7 @@ public class CMD_gruss implements CommandExecutor {
                         p.sendMessage(cfg1.getString("message.prefix") + "Du darfst dich nicht selber grüßen");
                     } else {
                         target.sendMessage(cfg1.getString("message.prefix") + "Du wurdest von §c" + p.getDisplayName() + " §egegrüßt.");
-                        p.sendMessage(cfg1.getString("essage.prefix") + "Du hast den Spieler §c" + target.getDisplayName() + " §egegrüßt.");
+                        p.sendMessage(cfg1.getString("message.prefix") + "Du hast den Spieler §c" + target.getDisplayName() + " §egegrüßt.");
                     }
                 } else {
                     p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.offlinePlayer"));

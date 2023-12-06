@@ -26,9 +26,9 @@ public class CMD_Pay implements CommandExecutor {
                         if (amount >= 1) {
                             if (amount <= api.getMoney(p.getUniqueId().toString())) {
                                 api.removeMoney(p.getUniqueId(), amount);
-                                p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gepayed.");
+                                p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen gezahlt.");
                                 api.addMoney(target.getUniqueId(), amount);
-                                target.sendMessage(cfg1.getString("message.prefix") + "Du hast von " + p.getDisplayName() + " " + amount + " Münzen bekommen.");
+                                target.sendMessage(cfg1.getString("message.prefix") + "Du hast von §a" + p.getDisplayName() + " " + amount + " §eMünzen bekommen.");
                             } else {
                                 p.sendMessage(cfg1.getString("message.prefix") +cfg1.getString("message.pay.notEnoughMoney"));
                             }
