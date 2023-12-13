@@ -10,11 +10,11 @@ import java.io.File;
 
 public class CMD_Chat implements CommandExecutor{
 
-    File messageDE = new File("plugins//API//message_de_DE.yml");
-    YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(this.messageDE);
     public static boolean onChatEnable = true;
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        File messageDE = new File("plugins//API//message_de_DE.yml");
+        YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
         if (sender instanceof Player p) {
             if (p.hasPermission("System.Admin")|| p.hasPermission("System.Dev")|| p.hasPermission("System.SrMod")) {
                 if (onChatEnable) {

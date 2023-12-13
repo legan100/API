@@ -34,6 +34,7 @@ public class FileManager{
                 cfg1.addDefault("message.offlinePlayer", "Spieler ist offline");
                 cfg1.addDefault("message.unknownCMD", "§cUnbekannter Command!");
                 cfg1.addDefault("message.addmoney.usage","/addmoney <Spielername> <Betrag>");
+                cfg1.addDefault("message.bcl.usage","Nutze bitte &e/bcl <Nachricht>");
                 cfg1.addDefault("message.changeGamemode.spectator","Du hast deinen Spielmodus in §cSpectator §egeändert.");
                 cfg1.addDefault("message.changeGamemode.adventure","Du hast deinen Spielmodus in §cAdventure §egeändert.");
                 cfg1.addDefault("message.changeGamemode.survival","Du hast deinen Spielmodus in §cSurvival §egeändert.");
