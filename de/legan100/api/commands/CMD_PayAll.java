@@ -34,11 +34,11 @@ public class CMD_PayAll implements CommandExecutor {
                                     api.removeMoney(p.getUniqueId(), summe);
                                 }
                             } else {
-                                p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.pay.notEnoughMoney"));
+                                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.pay.notEnoughMoney"));
                             }
                         }
                     } else {
-                        p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.payall.onlyNumbers"));
+                        p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.payall.onlyNumbers"));
                     }
                 } else {
                     p.sendMessage(cfg1.getString("message.prefis") + cfg1.getString("message.payall.onlyOnRPBuild"));

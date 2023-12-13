@@ -20,7 +20,7 @@ public class CMD_Chatclear implements CommandExecutor {
                         for (int i = 0; i < 150; i++) {
                             players.sendMessage(" ");
                         }
-                        players.sendMessage("§c§lSystem » §7Der Chat wurde von " + p.getName() + " geleert");
+                        players.sendMessage(cfg1.getString("message.prefix") + "Der Chat wurde von " + p.getName() + " geleert");
                         continue;
                     }
                     players.sendMessage("");
