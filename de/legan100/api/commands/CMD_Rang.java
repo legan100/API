@@ -20,7 +20,7 @@ public class CMD_Rang implements CommandExecutor {
             } else if (p.hasPermission("System.Content")) {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.content"));
             } else if (p.hasPermission("System.SrMod")) {
-                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.srMod"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.srmod"));
             } else if (p.hasPermission("System.Mod")) {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.mod"));
             } else if (p.hasPermission("System.Sup")) {
@@ -34,7 +34,7 @@ public class CMD_Rang implements CommandExecutor {
             } else if (p.hasPermission("System.Media")) {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.media"));
             } else if (p.hasPermission("System.Mitarbeiter")) {
-                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.clan"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.mitarbeiter"));
             } else if (p.hasPermission("System.Premium")) {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.rang.premium"));
             } else {

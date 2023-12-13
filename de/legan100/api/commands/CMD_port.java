@@ -17,7 +17,7 @@ public class CMD_port implements CommandExecutor {
             if (p.hasPermission("System.Admin") || p.hasPermission("System.Dev")) {
                 p.sendMessage(cfg1.getString("message.prefix") + "Server hat den Port " + p.getServer().getPort() + ".");
             } else {
-                p.sendMessage(cfg1.getString("message.noPerms"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         } else {
             sender.sendMessage(cfg1.getString("message.prefix") + "Der Server hat den Port " + sender.getServer().getPort() + ".");

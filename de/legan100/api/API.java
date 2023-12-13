@@ -56,6 +56,7 @@ public class API extends JavaPlugin {
         getCommand("pay").setExecutor(new CMD_Pay());
         getCommand("removemoney").setExecutor(new CMD_RemoveMoney());
         getCommand("uuid").setExecutor(new CMD_uuid());
+        getCommand("bcl").setExecutor(new CMD_BCL());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }
