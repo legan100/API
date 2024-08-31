@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/de/legan100/api/commands/CMD_GM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/API.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_17_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/spigot_1_17_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/de/legan100/api/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_BCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/de/legan100/api/commands/CMD_BCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Wartung.java" beforeDir="false" afterPath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Wartung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/utils/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/de/legan100/api/utils/MySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
-    </list>
+    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="chore: Backup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,11 +84,24 @@
       <workItem from="1723882663383" duration="1622000" />
       <workItem from="1723993902156" duration="87000" />
       <workItem from="1724020183374" duration="725000" />
-      <workItem from="1725098409814" duration="364000" />
+      <workItem from="1725098409814" duration="1015000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: Backup">
+      <option name="closed" value="true" />
+      <created>1725100550636</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725100550636</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: Backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Backup" />
   </component>
 </project>
