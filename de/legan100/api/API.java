@@ -38,7 +38,6 @@ public class API extends JavaPlugin {
         getCommand("msg").setExecutor(new CMD_msg());
         getCommand("tell").setExecutor(new CMD_msg());
         getCommand("whisper").setExecutor(new CMD_msg());
-        getCommand("DM").setExecutor(new CMD_msg());
         getCommand("port").setExecutor(new CMD_port());
         getCommand("color").setExecutor(new CMD_color());
         getCommand("farbe").setExecutor(new CMD_color());
@@ -57,6 +56,7 @@ public class API extends JavaPlugin {
         getCommand("removemoney").setExecutor(new CMD_RemoveMoney());
         getCommand("uuid").setExecutor(new CMD_uuid());
         getCommand("bcl").setExecutor(new CMD_BCL());
+        getCommand("gm").setExecutor(new CMD_GM());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }

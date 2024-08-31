@@ -11,7 +11,7 @@ public class MySQL{
     public static Connection con;
 
     public static void connect() {
-        File file = new File("plugins//API//mysql.yml");
+        File file = new File("plugins//API//money.yml");
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
         if (!isConnected()) {
             try {

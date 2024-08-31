@@ -13,14 +13,14 @@ public class CMD_BCL implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         File messageDE = new File("plugins//API//message_de_DE.yml");
         YamlConfiguration cfg1 = YamlConfiguration.loadConfiguration(messageDE);
-        if(sender instanceof Player p) {
-            if(p.hasPermission("System.Admin")){
+        if (sender instanceof Player p) {
+            if (p.hasPermission("System.Admin")) {
                 if (args.length >= 1) {
                     String bcMessage = "";
                     for (String arg : args) {
-                        bcMessage = bcMessage + " " +  arg;
+                        bcMessage = bcMessage + " " + arg;
                     }
-                    if(bcMessage.contains("&")){
+                    if (bcMessage.contains("&")) {
                         bcMessage.replace("§", "&");
                     }
                     p.getServer().broadcastMessage("§9-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
@@ -28,14 +28,15 @@ public class CMD_BCL implements CommandExecutor {
                     p.getServer().broadcastMessage(bcMessage);
                     p.getServer().broadcastMessage("");
                     p.getServer().broadcastMessage("§9-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-                }else {
+                } else {
                     p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.bcl.usage"));
                 }
-            }else {
+            } else {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
-        }else {
-            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));        }
+        } else {
+            sender.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.onlyPlayerAllowed"));
+        }
 
         return false;
     }
