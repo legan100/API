@@ -20,7 +20,7 @@ public class CMD_port implements CommandExecutor {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
         } else {
-            sender.sendMessage(this.cfg1.getString("message.prefix") + "Der Server hat den Port " + sender.getServer().getPort() + ".");
+            sender.sendMessage(cfg1.getString("message.prefix") + "Der Server hat den Port " + sender.getServer().getPort() + ".");
         }
         return false;
     }

@@ -43,9 +43,11 @@ public class FileManager{
                 cfg1.addDefault("message.chat.aktivieren", "Chat wurde aktiviert");
                 cfg1.addDefault("message.chat.deaktiviert","Der Chat wurde deaktiviert");
                 cfg1.addDefault("message.discord.discord", "Unser Discord:");
+                cfg1.addDefault("message.error.team", "Es ist ein Fehler aufgetreten. Bitte melde dich beim Devteam.");
+                cfg1.addDefault("message.error.player", "Es ist ein Fehler aufgetreten. Bitte melde dich beim Serverteam.");
                 cfg1.addDefault("message.greeting.usage", "/gruss <name>");
                 cfg1.addDefault("message.msg.notTalkToMyself", "du kannst dir nichts selber flüstern");
-                cfg1.addDefault("Message.msg.usage", "/dm <name> <nachricht>");
+                cfg1.addDefault("message.msg.usage", "/dm <name> <nachricht>");
                 cfg1.addDefault("message.pay.notEnoughMoney","Du hast nicht genug Geld.");
                 cfg1.addDefault("message.pay.minOne","Du musst mindestens 1 Münze zahlen.");
                 cfg1.addDefault("message.pay.usage","/pay <name> <betrag>");

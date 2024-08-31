@@ -27,6 +27,7 @@ public class CMD_RemoveMoney implements CommandExecutor {
                         int amount = Integer.valueOf(args[1]);
                         if (amount <= api.getMoney(p.getUniqueId().toString())) {
                             p.sendMessage(cfg1.getString("message.prefix") + "Du hast dem Spieler " + target.getDisplayName() + " " + amount + " Münzen genommen.");
+                            target.sendMessage(cfg1.getString("message.prefix") + "Der Spieler " + p.getDisplayName() + " hat dir " + amount + " Münzen weggenommen.");
                             api.removeMoney(target.getUniqueId(), amount);
                         } else {
                             p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.removemoney.minus"));

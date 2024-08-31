@@ -17,7 +17,7 @@ public class CMD_Adventure implements CommandExecutor {
         if(sender instanceof Player p){
             if(p.hasPermission("System.Admin")){
                 p.setGameMode(GameMode.CREATIVE);
-                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.changeGameMode.adventure"));
+                p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.changeGamemode.adventure"));
             } else {
                 p.sendMessage(cfg1.getString("message.prefix") + cfg1.getString("message.noPerms"));
             }
