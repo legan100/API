@@ -23,7 +23,7 @@ commands:
   tell:
   money:
   addmoney:
-  DM:
+  gm:
   port:
   removeMoney:
   pay:
