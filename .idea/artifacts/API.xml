@@ -3,6 +3,7 @@
     <output-path>$USER_HOME$/export</output-path>
     <root id="archive" name="API.jar">
       <element id="module-output" name="API" />
+      <element id="module-output" name="Chatsystem" />
     </root>
   </artifact>
 </component>
