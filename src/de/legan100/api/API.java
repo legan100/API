@@ -3,6 +3,7 @@ package de.legan100.api;
 import de.legan100.api.commands.*;
 import de.legan100.api.listener.ChatListener;
 import de.legan100.api.listener.JoinListener;
+import de.legan100.api.utils.BackendClient;
 import de.legan100.api.utils.Broadcaster;
 import de.legan100.api.utils.FileManager;
 import de.legan100.api.utils.MySQL;
@@ -11,17 +12,46 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class API extends JavaPlugin {
 
     private static API instance;
+    private BackendClient backend;
 
-
-    public void onEnable() {
-        (new Broadcaster(this)).startBroadcast();
-        register();
-        FileManager.createFile();
-        instance = this;
+    public static API getInstance() {
+        return instance;
     }
 
+    public BackendClient getBackend() {
+        return backend;
+    }
 
+    @Override
+    public void onEnable() {
+        instance = this;
+        new Broadcaster(this).startBroadcast();
+        register();
+        FileManager.createFile();
+        backend = new BackendClient();
+        backend.connect();
+
+        backend.send("""
+            {
+              "type":"SERVER_START",
+              "server":"%s"
+            }
+            """.formatted(getServer().getName()));
+    }
+
+    @Override
     public void onDisable() {
+
+        if (backend != null) {
+                backend.send("""
+                {
+                  "type":"SERVER_STOP"
+                }
+                """);
+
+                backend.disconnect();
+        }
+
         MySQL.disconnect();
     }
 
@@ -64,9 +94,5 @@ public class API extends JavaPlugin {
         getCommand("gm").setExecutor(new CMD_GM());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
-    }
-
-    public API getInstance(){
-        return this;
     }
 }

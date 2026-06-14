@@ -4,6 +4,7 @@
     <root id="archive" name="API.jar">
       <element id="module-output" name="API" />
       <element id="module-output" name="Chatsystem" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
     </root>
   </artifact>
 </component>
