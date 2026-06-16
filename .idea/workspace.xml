@@ -9,11 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="chore: Backup">
-      <change afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/BackendClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/API.xml" afterDir="false" />
+    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="feat: add TCP-Connection">
+      <change afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_GetBackendConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_gbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_globalrestart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/de/legan100/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_BCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_BCL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/utils/BackendClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/BackendClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +163,10 @@
       <workItem from="1780219498880" duration="8048000" />
       <workItem from="1780328705576" duration="600000" />
       <workItem from="1781381315052" duration="70000" />
-      <workItem from="1781445430496" duration="11641000" />
+      <workItem from="1781445430496" duration="18602000" />
+      <workItem from="1781545561534" duration="1786000" />
+      <workItem from="1781628682750" duration="439000" />
+      <workItem from="1781639071503" duration="342000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Backup">
       <option name="closed" value="true" />
@@ -185,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780238314802</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: add TCP-Connection">
+      <option name="closed" value="true" />
+      <created>1781464653808</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1781464653809</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +219,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: Backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Backup" />
+    <MESSAGE value="feat: add TCP-Connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add TCP-Connection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

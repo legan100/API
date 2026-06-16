@@ -12,13 +12,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class API extends JavaPlugin {
 
     private static API instance;
-    private BackendClient backend;
+    private static BackendClient backend;
 
     public static API getInstance() {
         return instance;
     }
 
-    public BackendClient getBackend() {
+    public static BackendClient getBackend() {
         return backend;
     }
 
@@ -41,18 +41,16 @@ public class API extends JavaPlugin {
 
     @Override
     public void onDisable() {
-
+        System.out.println("1");
         if (backend != null) {
-                backend.send("""
-                {
-                  "type":"SERVER_STOP"
-                }
-                """);
-
-                backend.disconnect();
+            backend.send("""
+            {
+              "type":"SERVER_STOP ,
+              "server":"%s"
+            }
+            """.formatted(getServer().getName()));
+            backend.disconnect();
         }
-
-        MySQL.disconnect();
     }
 
     public void register() {
@@ -92,6 +90,9 @@ public class API extends JavaPlugin {
         getCommand("uuid").setExecutor(new CMD_uuid());
         getCommand("bcl").setExecutor(new CMD_BCL());
         getCommand("gm").setExecutor(new CMD_GM());
+        getCommand("globalrestart").setExecutor(new CMD_globalrestart());
+        getCommand("GetBackendConnection").setExecutor(new CMD_GetBackendConnection());
+        getCommand("gbc").setExecutor(new CMD_gbc());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }

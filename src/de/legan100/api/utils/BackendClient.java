@@ -1,6 +1,8 @@
 package de.legan100.api.utils;
 
+import de.legan100.api.API;
 import org.bukkit.Bukkit;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.io.*;
 import java.net.Socket;
@@ -10,68 +12,69 @@ public class BackendClient {
 
     private static final String HOST = "127.0.0.1";
     private static final int PORT = 10000;
+    private static final long RECONNECT_DELAY = 5000L;
 
     private Socket socket;
     private PrintWriter out;
     private BufferedReader in;
 
-    private final AtomicBoolean reconnecting = new AtomicBoolean(false);
+    private Thread listenerThread;
+    private Thread reconnectThread;
+
+    private BukkitTask pingTask;
+
     private final AtomicBoolean connected = new AtomicBoolean(false);
+    private final AtomicBoolean reconnecting = new AtomicBoolean(false);
+    private final AtomicBoolean shuttingDown = new AtomicBoolean(false);
 
     public void connect() {
+
+        if (shuttingDown.get()) return;
+
         try {
-
-            socket = new Socket(HOST, PORT);
-
-            socket.setKeepAlive(true);
-            socket.setTcpNoDelay(true);
-
-            out = new PrintWriter(socket.getOutputStream(), true);
-            in = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
+            openSocket();
 
             connected.set(true);
-
-            System.out.println("[BackendClient] Connected to backend");
-
+            System.out.println("[BackendClient] Connected");
             startListener();
-            startPingTask();
-
-        } catch (IOException e) {
-
+            startPing();
+        } catch (Exception e) {
             connected.set(false);
-
-            System.err.println("[BackendClient] Connection failed");
             reconnect();
         }
     }
 
-    private void startListener() {
+    private void openSocket() throws IOException {
+        socket = new Socket(HOST, PORT);
+        socket.setKeepAlive(true);
+        socket.setTcpNoDelay(true);
 
-        Thread listenerThread = new Thread(() -> {
+        out = new PrintWriter(socket.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    }
+
+    private void startListener() {
+        listenerThread = new Thread(() -> {
 
             try {
-
                 String line;
 
-                while (connected.get()
-                        && socket != null
-                        && !socket.isClosed()
-                        && (line = in.readLine()) != null) {
+                while (!shuttingDown.get()) {
 
-                    handleMessage(line);
-                }
-
-            } catch (Exception e) {
-
-                if (connected.get()) {
-                    System.err.println("[BackendClient] Connection lost");
+                    try {
+                        line = in.readLine();
+                        if (line == null) break;
+                    } catch (Exception e) {
+                        break;
+                    }
+                    handle(line);
                 }
 
             } finally {
-
                 connected.set(false);
-                reconnect();
+                if (!shuttingDown.get()) {
+                    reconnect();
+                }
             }
 
         });
@@ -81,61 +84,49 @@ public class BackendClient {
         listenerThread.start();
     }
 
-    private void handleMessage(String message) {
-
-        if (message.equalsIgnoreCase("PONG")) {
+    private void handle(String msg) {
+        if ("PONG".equalsIgnoreCase(msg)) return;
+        if ("bc_globalrestart_allow".equalsIgnoreCase(msg)) {
+            API.getInstance().getServer().shutdown();
             return;
         }
-
-        System.out.println("[BACKEND] " + message);
-
+        System.out.println("[BACKEND] " + msg);
     }
 
-    private void startPingTask() {
-        Bukkit.getScheduler().runTaskTimerAsynchronously(Bukkit.getPluginManager().getPlugin("API"), () -> {
-                    if (!isConnected()) {
-                        return;
-                    }
-                    send("PING");
-                },20L * 30, 20L * 30);
+    private void startPing() {
+        if (pingTask != null) return;
+
+        pingTask = Bukkit.getScheduler().runTaskTimerAsynchronously(API.getInstance(), () -> {
+                    if (isConnected()) {
+                        send("PING");
+                    }}, 20L * 30, 20L * 30);
     }
 
     private void reconnect() {
+        if (shuttingDown.get()) return;
+        if (!reconnecting.compareAndSet(false, true)) return;
 
-        if (!reconnecting.compareAndSet(false, true)) {
-            return;
-        }
+        reconnectThread = new Thread(() -> {
+            try {
+                while (!connected.get() && !shuttingDown.get()) {
+                    try {
+                        System.out.println("[BackendClient] Reconnecting...");
+                        closeSocketQuietly();
+                        openSocket();
+                        connected.set(true);
+                        System.out.println("[BackendClient] Reconnected");
+                        startListener();
+                        return;
 
-        Thread reconnectThread = new Thread(() -> {
-            while (!connected.get()) {
-                try {
-                    System.out.println("[BackendClient] Reconnecting...");
-                    disconnectInternal();
-                    socket = new Socket(HOST, PORT);
-                    socket.setKeepAlive(true);
-                    socket.setTcpNoDelay(true);
-                    out = new PrintWriter(
-                            socket.getOutputStream(),
-                            true
-                    );
-                    in = new BufferedReader(
-                            new InputStreamReader(
-                                    socket.getInputStream()
-                            )
-                    );
-                    connected.set(true);
-                    System.out.println("[BackendClient] Reconnected");
-                    startListener();
-                    reconnecting.set(false);
-                    return;
+                    } catch (Exception ignored) {}
 
-                } catch (Exception ignored) {}
-
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException ignored) {}
+                    try {
+                        Thread.sleep(RECONNECT_DELAY);
+                    } catch (InterruptedException ignored) {}
+                }
+            } finally {
+                reconnecting.set(false);
             }
-            reconnecting.set(false);
         });
 
         reconnectThread.setName("Backend-Reconnect");
@@ -143,15 +134,18 @@ public class BackendClient {
         reconnectThread.start();
     }
 
-    public void send(String message) {
+    public void send(String msg) {
+        if (!isConnected()) return;
         try {
-            if (!isConnected()) {
-                return;
+            out.println(msg);
+            if (out.checkError()) {
+                throw new IOException("Write failed");
             }
-            out.println(message);
         } catch (Exception e) {
             connected.set(false);
-            reconnect();
+            if (!shuttingDown.get()) {
+                reconnect();
+            }
         }
     }
 
@@ -160,27 +154,36 @@ public class BackendClient {
     }
 
     public void disconnect() {
+        shuttingDown.set(true);
         connected.set(false);
-        disconnectInternal();
+        System.out.println("DISCONNECT START");
+        if (pingTask != null) {
+            pingTask.cancel();
+            pingTask = null;
+        }
+        closeSocketQuietly();
+        if (listenerThread != null) {
+            listenerThread.interrupt();
+        }
+        if (reconnectThread != null) {
+            reconnectThread.interrupt();
+        }
+        System.out.println("DISCONNECT END");
     }
-
-    private void disconnectInternal() {
-        try {
-            if (in != null) {
-                in.close();
-            }
-        } catch (Exception ignored) {}
-
-        try {
-            if (out != null) {
-                out.close();
-            }
-        } catch (Exception ignored) {}
-
+    private void closeSocketQuietly() {
         try {
             if (socket != null) {
-                socket.close();
+                socket.shutdownInput();
+                socket.shutdownOutput();
             }
         } catch (Exception ignored) {}
+
+        try { if (in != null) in.close(); } catch (Exception ignored) {}
+        try { if (out != null) out.close(); } catch (Exception ignored) {}
+        try { if (socket != null) socket.close(); } catch (Exception ignored) {}
+
+        in = null;
+        out = null;
+        socket = null;
     }
 }
