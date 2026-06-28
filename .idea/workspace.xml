@@ -9,51 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="chore: Backup">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/paper_1_21_10_127.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chatsystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/API.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spigot_1_17_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e34d48d5-2b7e-4870-b5c0-05d954da7c9a" name="Changes" comment="chore: backup">
+      <change afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_backendrestart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/api/MoneyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/api/MoneyAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_APIver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_APIver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_BCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_BCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Chatclear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Chatclear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Creativ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Creativ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Discord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Discord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_GM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_GM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Pay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Pay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_PayAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_PayAll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Rang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Rang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Regeln.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Regeln.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_RemoveMoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_RemoveMoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Spectator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Spectator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Survival.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Survival.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_TS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_TS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_Wartung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Wartung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_addMoney.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_addMoney.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_gruss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_gruss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_port.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/commands/CMD_uuid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_uuid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/listener/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/listener/ChatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/listener/JoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/listener/JoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/utils/Broadcaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/Broadcaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/utils/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/de/legan100/api/utils/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/MySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_APIver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_APIver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Chatclear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_Chatclear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_gbc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_globalchatclear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_globalrestart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/commands/CMD_globalrestart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/legan100/api/utils/BackendClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/legan100/api/utils/BackendClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,30 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.API [install].executor": "Run",
-    "Maven.API [package].executor": "Run",
-    "Maven.Chatsystem [package].executor": "Run",
-    "Maven.api [validate].executor": "Run",
-    "OpenRewrite.Faces4xMigrationToFaces41x.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nicon/Downloads/paper-1.21.10-127.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.API [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.API [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Chatsystem [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.api [validate].executor&quot;: &quot;Run&quot;,
+    &quot;OpenRewrite.Faces4xMigrationToFaces41x.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nicon/IdeaProjects/API/plugin.yml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nicon\IdeaProjects\API\src" />
@@ -196,7 +161,27 @@
       <workItem from="1766789782424" duration="637000" />
       <workItem from="1767477766229" duration="1212000" />
       <workItem from="1780080527105" duration="1628000" />
-      <workItem from="1780219498880" duration="5331000" />
+      <workItem from="1780219498880" duration="8048000" />
+      <workItem from="1780328705576" duration="600000" />
+      <workItem from="1781381315052" duration="70000" />
+      <workItem from="1781445430496" duration="18602000" />
+      <workItem from="1781545561534" duration="1786000" />
+      <workItem from="1781628682750" duration="439000" />
+      <workItem from="1781639071503" duration="3608000" />
+      <workItem from="1781881825503" duration="3328000" />
+      <workItem from="1781976327369" duration="6021000" />
+      <workItem from="1782032741036" duration="2549000" />
+      <workItem from="1782065118263" duration="52000" />
+      <workItem from="1782153918426" duration="3027000" />
+      <workItem from="1782237216352" duration="1798000" />
+      <workItem from="1782283048459" duration="4330000" />
+      <workItem from="1782332971463" duration="9000" />
+      <workItem from="1782333414342" duration="625000" />
+      <workItem from="1782399576179" duration="2651000" />
+      <workItem from="1782464525746" duration="1999000" />
+      <workItem from="1782492244397" duration="603000" />
+      <workItem from="1782539341019" duration="86000" />
+      <workItem from="1782672181285" duration="2298000" />
     </task>
     <task id="LOCAL-00001" summary="chore: Backup">
       <option name="closed" value="true" />
@@ -214,7 +199,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725100719277</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: Backup">
+      <option name="closed" value="true" />
+      <created>1780238314802</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780238314802</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add TCP-Connection">
+      <option name="closed" value="true" />
+      <created>1781464653808</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1781464653809</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: backup">
+      <option name="closed" value="true" />
+      <created>1781643828458</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1781643828458</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +242,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: Backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Backup" />
+    <MESSAGE value="feat: add TCP-Connection" />
+    <MESSAGE value="chore: backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: backup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

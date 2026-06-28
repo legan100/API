@@ -5,19 +5,23 @@ author: legan100
 main: de.legan100.api.API
 commands:
   color:
-  farbe:
-  farben:
+    aliases:
+      - farbe
+      - farben
   rang:
   wartung:
   chat:
   discord:
   ts:
-  Teamspeak:
+    aliases:
+      - teamspeak
   regel:
-  regelwerk:
-  regeln:
-  apiver:
+    aliases:
+      - regelwerk
+      - regeln
+      - rules
   apiversion:
+    aliases: [apiver]
   gruss:
   msg:
   tell:
@@ -38,3 +42,7 @@ commands:
   adventure:
   uuid:
   bcl:
+  globalrestart:
+  GetBackendConnection:
+  gbc:
+  backendrestart:
