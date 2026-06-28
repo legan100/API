@@ -92,7 +92,8 @@ public class API extends JavaPlugin {
         getCommand("gm").setExecutor(new CMD_GM());
         getCommand("globalrestart").setExecutor(new CMD_globalrestart());
         getCommand("GetBackendConnection").setExecutor(new CMD_GetBackendConnection());
-        getCommand("gbc").setExecutor(new CMD_gbc());
+        getCommand("gbc").setExecutor(new CMD_globalchatclear());
+        getCommand("backendrestart").setExecutor(new CMD_backendrestart());
         getServer().getPluginManager().registerEvents(new ChatListener(), this);
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
     }

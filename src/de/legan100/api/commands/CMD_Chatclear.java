@@ -16,7 +16,7 @@ public class CMD_Chatclear implements CommandExecutor {
         if (sender instanceof Player p) {
             if (p.hasPermission("System.Admin")||p.hasPermission("System.SrMod")){
                 for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-                    if (!players.hasPermission("system.vorstand")) {
+                    if (players.hasPermission("system.default")||players.hasPermission("system.media")) {
                         for (int i = 0; i < 150; i++) {
                             players.sendMessage(" ");
                         }

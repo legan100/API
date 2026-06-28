@@ -45,3 +45,4 @@ commands:
   globalrestart:
   GetBackendConnection:
   gbc:
+  backendrestart:
